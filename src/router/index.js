@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import EqSystemView from "../views/EqSystemView.vue";
 import NotFound from "../views/NotFoundView.vue";
+import QuadraticEqView from "../views/QuadraticEqView.vue";
 
 const routes = [
   {
@@ -11,11 +12,7 @@ const routes = [
   {
     path: "/quadratic",
     name: "quadratic",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/QuadraticEqView.vue"),
+    component: QuadraticEqView,
   },
   {
     path: "/:catchAll(.*)",

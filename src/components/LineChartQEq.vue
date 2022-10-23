@@ -32,36 +32,35 @@ ChartJS.register(
 );
 
 export default {
-  name: "LineChartView",
+  name: "LineCharQEq",
   components: {
     Line,
   },
-  data: () => {
+  data: function () {
     return {
       chartOptions: {
-        scales: {
-          x: {
-            beginAtZero: true,
-            grid: {
-              borderColor: "#999",
+        plugins: {
+          legend: {
+            labels: {
+              boxWidth: 5,
+              boxHeight: 5,
+              color: "#717171",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
             },
-            position: "center",
-          },
-          y: {
-            beginAtZero: true,
-            grid: {
-              borderColor: "#999",
-            },
-            position: "center",
           },
         },
       },
     };
   },
   props: {
-    chartId: {
+    ChartId: {
       type: String,
-      default: "line-chart",
+      default: () => {
+        return "line-chart-1";
+      },
     },
     width: {
       type: Number,
@@ -69,7 +68,7 @@ export default {
     },
     height: {
       type: Number,
-      default: 400,
+      default: 270,
     },
     cssClasses: {
       default: "",
@@ -77,27 +76,13 @@ export default {
     },
     styles: {
       type: Object,
-      default: () => {
-        // return { height: "200px" };
-      },
-    },
-    xPoint: {
-      type: Number,
-      default: 0,
-    },
-    yPoint: {
-      type: Number,
-      default: 0,
+      default: () => {},
     },
     labels: {
       type: Array,
       default: () => [],
     },
-    equiationOne: {
-      type: Array,
-      default: () => [],
-    },
-    equiationTwo: {
+    equiation: {
       type: Array,
       default: () => [],
     },
@@ -105,26 +90,19 @@ export default {
   computed: {
     chartData() {
       const labels = this.labels;
-      const data = this.equiationOne;
-      const data2 = this.equiationTwo;
+      const data = this.equiation;
       return {
         labels,
         datasets: [
           {
             type: "line",
-            label: "EQ 1",
+            label: "Quadratic Equation Graph",
             data,
-            fill: true,
-            backgroundColor: "#8782ed",
             borderColor: "#8782ed",
-          },
-          {
-            type: "line",
-            label: "EQ 2",
-            data: data2,
-            fill: true,
-            borderColor: "#4f46e5",
-            backgroundColor: "#4f46e5",
+            pointBackgroundColor: "rgba(0, 0, 0, 0)",
+            pointBorderColor: "rgba(0, 0, 0, 0)",
+            backgroundColor: "#8782ed",
+            tension: 0.4,
           },
         ],
       };

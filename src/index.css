@@ -28,4 +28,30 @@
         my-1
         h-fit
     }
+    .label-field-form {
+        @apply
+        m-2
+        text-gray-700 
+        font-bold
+    }
+    .head-table-text {
+        @apply
+        border 
+        border-slate-300 
+        p-3 
+        text-gray-700
+    }
+    .system-eq-graph-style-container {
+        @apply 
+        w-10/12 
+        lg:w-7/12 
+        lg:h-3/4 
+        basis-7/12 
+        border 
+        border-indigo-200 
+        shadow-lg 
+        mx-auto 
+        p-2 
+        rounded-md;
+    }
 }

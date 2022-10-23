@@ -2,20 +2,20 @@
   <div class="basis-5/12">
     <form action="" class="mx-auto w-full">
       <div class="my-5 flex justify-center">
-        <p class="m-2 text-gray-700 font-bold">EQ 1</p>
+        <p class="label-field-form">EQ 1</p>
         <input class="number-input-field" type="number" v-model="a" />
-        <label class="m-2 text-gray-700 font-bold" for="">X</label>
+        <label class="label-field-form" for="">X</label>
         <input class="number-input-field" type="number" v-model="b" />
-        <label class="m-2 text-gray-700 font-bold" for="">Y</label>
+        <label class="label-field-form" for="">Y</label>
         <p class="mt-2 text-gray-700 font-bold">=</p>
         <input class="number-input-field" type="number" v-model="c" />
       </div>
       <div class="my-5 flex justify-center">
-        <p class="m-2 text-gray-700 font-bold">EQ 2</p>
+        <p class="label-field-form">EQ 2</p>
         <input class="number-input-field" type="number" v-model="a1" />
-        <label class="m-2 text-gray-700 font-bold" for="">X</label>
+        <label class="label-field-form" for="">X</label>
         <input class="number-input-field" type="number" v-model="b1" />
-        <label class="m-2 text-gray-700 font-bold" for="">Y</label>
+        <label class="label-field-form" for="">Y</label>
         <p class="mt-2 text-gray-700 font-bold">=</p>
         <input class="number-input-field" type="number" v-model="c1" />
       </div>
@@ -24,10 +24,8 @@
       >
         <thead>
           <tr class="text-center bg-gray-100">
-            <th class="border border-slate-300 p-3 text-gray-700">Variables</th>
-            <th class="border border-slate-300 p-3 text-gray-700">
-              Result Value
-            </th>
+            <th class="head-table-text">Variables</th>
+            <th class="head-table-text">Result Value</th>
           </tr>
         </thead>
         <tbody>
@@ -43,9 +41,7 @@
       </table>
     </form>
   </div>
-  <div
-    class="w-10/12 lg:w-7/12 lg:h-3/4 basis-7/12 border border-indigo-200 shadow-lg mx-auto p-2 rounded-md"
-  >
+  <div class="system-eq-graph-style-container">
     <LineChart
       :equiationOne="equiationOne"
       :equiationTwo="equiationTwo"
@@ -58,7 +54,7 @@
   </div>
 </template>
 <script>
-import LineChart from "./LineChartView.vue";
+import LineChart from "./LineChart.vue";
 export default {
   name: "FieldForm",
   components: { LineChart },
@@ -110,9 +106,8 @@ export default {
       const xVariable = Number(this.xValue);
       const maxX = xVariable + 10;
       const minX = xVariable - 10;
-      const labels = this.range(minX, maxX);
-      console.log(labels);
-      return labels;
+
+      return this.range(minX, maxX);
     },
     equiationOne() {
       const labels = this.labels;

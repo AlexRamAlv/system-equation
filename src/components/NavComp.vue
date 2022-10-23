@@ -1,7 +1,7 @@
 <template>
   <nav
     :class="this.visible === true ? 'h-48' : 'h-16'"
-    class="w-screen justify-center bg-indigo-600 text-white px-5 py-3 shadow-2xl md:grid md:grid-cols-2 md:h-20 md:justify-around transition-[height] duration-300 overflow-hidden xl:items-center"
+    class="w-screen grid justify-items-center bg-indigo-600 text-white px-5 py-3 shadow-2xl md:grid md:grid-cols-2 md:h-16 md:justify-around transition-[height] duration-300 overflow-hidden xl:items-center"
   >
     <div
       :class="{ line: this.visible }"
@@ -35,9 +35,7 @@
         Quadratic Equation
       </router-link>
     </div>
-    <div
-      class="hidden md:grid md:grid-cols-2 lg:w-8/12 lg:justify-end xl:w-7/12"
-    >
+    <div class="hidden md:grid md:grid-cols-2 lg:w-8/12 lg:justify-end">
       <router-link class="navigation-link" :to="{ name: 'EqSystemView' }">
         Equations System
       </router-link>
@@ -73,6 +71,5 @@ a.router-link-exact-active {
 
 .line {
   border-bottom: 1px solid #3730a3;
-  padding-bottom: 10px;
 }
 </style>
