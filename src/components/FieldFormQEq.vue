@@ -50,7 +50,7 @@
           </tr>
         </tbody>
       </table>
-      <div>
+      <div class="md:flex md:m-auto md:w-[30rem] md:items-center lg:flex-col">
         <p class="text-gray-700 font-bold w-fit mx-auto">- Comment</p>
         <section
           class="border border-slate-300 rounded p-3 w-72 mx-auto my-4 lg:w-80"
